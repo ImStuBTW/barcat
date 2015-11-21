@@ -22,6 +22,7 @@ var DrinkSchema = new Schema({
 			default: '',
 			trim: true
 		}
+		
 	}],
 	directions: {
 		type: String,
