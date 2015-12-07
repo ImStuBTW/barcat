@@ -137,6 +137,13 @@ module.exports = function(grunt) {
 				limit: 10
 			}
 		},
+		copy: {
+			main: {
+				files: [
+					{expand: true, flatten: true, src: ['public/lib/bootstrap-sass-official/assets/fonts/bootstrap/*'], dest: 'public/fonts/bootstrap', filter: 'isFile'}
+				]
+			}
+		},
 		env: {
 			test: {
 				NODE_ENV: 'test'
@@ -175,7 +182,7 @@ module.exports = function(grunt) {
 	});
 
 	// Default task(s).
-	grunt.registerTask('default', ['lint', 'sass:dev', 'concurrent:default']);
+	grunt.registerTask('default', ['lint', 'sass:dev', 'copy:main', 'concurrent:default']);
 
 	// Debug task.
 	grunt.registerTask('debug', ['lint', 'concurrent:debug']);

@@ -5823,3 +5823,9 @@ button.close {
 
 .sample {
   background: #A0D468; }
+
+.ingredient-item > .col-sm-2, .ingredient-item > .col-sm-4 {
+  margin: 5px 0px 5px; }
+
+.remove-ingredient-button {
+  width: 100%; }

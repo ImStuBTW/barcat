@@ -1,4 +1,14 @@
 $brand-primary: #967ADC;
 $brand-success: #A0D468;
+
 @import "../public/lib/bootstrap-sass-official/assets/stylesheets/bootstrap";
+
 .sample { background: $brand-success; }
+
+.ingredient-item > .col-sm-2, .ingredient-item > .col-sm-4 {
+    margin: 5px 0px 5px;
+}
+
+.remove-ingredient-button {
+    width: 100%;
+}

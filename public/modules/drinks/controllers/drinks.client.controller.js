@@ -8,7 +8,7 @@ angular.module('drinks').controller('DrinksController', ['$scope', '$stateParams
 
 		// Add new Ingredient entries
 		$scope.addIngredient = function() {
-			var ingredient = {name: ''};
+			var ingredient = {amount: '0', amountfraction: '', unit: 'oz', name: ''};
 
 			$scope.drink.ingredients.push(ingredient);
 		};
@@ -19,10 +19,15 @@ angular.module('drinks').controller('DrinksController', ['$scope', '$stateParams
 		};
 
 		// Add new Ingredient entries
-		$scope.add = function() {
-			var ingredient = {name: ''};
+		$scope.addCreateIngredient = function() {
+			var ingredient = {amount: '0', amountfraction: '', unit: 'oz', name: ''};
 
 			$scope.ingredients.push(ingredient);
+		};
+
+		// Remove existing Ingredient entry
+		$scope.removeCreateIngredient = function(array, index) {
+			array.splice(index, 1);
 		};
 
 		// Create new Drink
