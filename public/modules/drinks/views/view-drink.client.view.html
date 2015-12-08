@@ -10,12 +10,10 @@
 			<i class="glyphicon glyphicon-trash"></i>
 		</a>
 	</div>
-	<small>
-		<em class="text-muted">
-			Posted on
-			<span data-ng-bind="drink.created | date:'mediumDate'"></span>
-			by
-			<span data-ng-bind="drink.user.displayName"></span>
-		</em>
-	</small>
+
+	<ul data-ng-repeat="ingredient in drink.ingredients">
+		<li class="ingredient-li"><span data-ng-bind="ingredient.amount"></span> <span data-ng-bind="ingredient.amountfraction"></span> <span data-ng-bind="ingredient.unit"></span> <span data-ng-bind="ingredient.name"></span></li>
+	</ul>
+	<p class="" data-ng-bind="drink.directions"></p>
+	<p class="" data-ng-bind="drink.credit"></p>
 </section>
