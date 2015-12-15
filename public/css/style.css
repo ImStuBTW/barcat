@@ -1423,7 +1423,8 @@ blockquote {
       content: '\2014 \00A0'; }
 
 .blockquote-reverse,
-blockquote.pull-right {
+blockquote.pull-right,
+blockquote.drink-admin {
   padding-right: 15px;
   padding-left: 0;
   border-right: 5px solid #eeeeee;
@@ -1432,16 +1433,16 @@ blockquote.pull-right {
   .blockquote-reverse footer:before,
   .blockquote-reverse small:before,
   .blockquote-reverse .small:before,
-  blockquote.pull-right footer:before,
-  blockquote.pull-right small:before,
-  blockquote.pull-right .small:before {
+  blockquote.pull-right footer:before, blockquote.drink-admin footer:before,
+  blockquote.pull-right small:before, blockquote.drink-admin small:before,
+  blockquote.pull-right .small:before, blockquote.drink-admin .small:before {
     content: ''; }
   .blockquote-reverse footer:after,
   .blockquote-reverse small:after,
   .blockquote-reverse .small:after,
-  blockquote.pull-right footer:after,
-  blockquote.pull-right small:after,
-  blockquote.pull-right .small:after {
+  blockquote.pull-right footer:after, blockquote.drink-admin footer:after,
+  blockquote.pull-right small:after, blockquote.drink-admin small:after,
+  blockquote.pull-right .small:after, blockquote.drink-admin .small:after {
     content: '\00A0 \2014'; }
 
 address {
@@ -3185,7 +3186,7 @@ tbody.collapse.in {
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box; }
-  .dropdown-menu.pull-right {
+  .dropdown-menu.pull-right, .dropdown-menu.drink-admin {
     right: 0;
     left: auto; }
   .dropdown-menu .divider {
@@ -3253,7 +3254,7 @@ tbody.collapse.in {
   top: 0;
   z-index: 990; }
 
-.pull-right > .dropdown-menu {
+.pull-right > .dropdown-menu, .drink-admin > .dropdown-menu {
   right: 0;
   left: auto; }
 
@@ -4511,7 +4512,8 @@ a.thumbnail.active {
     max-width: none; }
 
 .media-right,
-.media > .pull-right {
+.media > .pull-right,
+.media > .drink-admin {
   padding-left: 10px; }
 
 .media-left,
@@ -5620,7 +5622,7 @@ button.close {
   margin-left: auto;
   margin-right: auto; }
 
-.pull-right {
+.pull-right, .drink-admin {
   float: right !important; }
 
 .pull-left {
@@ -5829,3 +5831,19 @@ button.close {
 
 .remove-ingredient-button {
   width: 100%; }
+
+.drink-name {
+  display: inline-block; }
+  .drink-name h1 {
+    margin-top: 0px; }
+
+.drink-image img {
+  width: 100%; }
+
+.drink-rating {
+  padding-top: 6px;
+  padding-bottom: 6px; }
+
+.drink-rating-h1 {
+  margin-top: 0px;
+  margin-bottom: 0px; }
