@@ -52,11 +52,6 @@ var DrinkSchema = new Schema({
 		type: Date,
 		default: Date.now
 	},
-	rating: {
-		type: String,
-		default: '😺',
-		enum: ['😺', '😸', '😹', '😻', '😼', '😽', '🙀', '😿']
-	},
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'

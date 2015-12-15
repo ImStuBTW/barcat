@@ -1,48 +1,19 @@
 <section data-ng-controller="DrinksController" data-ng-init="findOne()">
 	<div class="page-header">
-		<span class="drink-name"><h1 data-ng-bind="drink.name"></h1></span>
-		<span class="drink-admin" data-ng-show="((authentication.user) && (authentication.user._id == drink.user._id))">
-			<a class="btn btn-primary" href="/#!/drinks/{{drink._id}}/edit">
-				<i class="glyphicon glyphicon-edit"></i> Edit
-			</a>
-			<a class="btn btn-primary" data-ng-click="remove();">
-				<i class="glyphicon glyphicon-trash"></i> Delete
-			</a>
-		</span>
+		<h1 data-ng-bind="drink.name"></h1>
+	</div>
+	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == drink.user._id))">
+		<a class="btn btn-primary" href="/#!/drinks/{{drink._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
 	</div>
 
-	<div class="row">
-		<div class="col-sm-6">
-			<div class="drink-image">
-				<img src="images/cocktail.png" alt="Cocktail">
-			</div>
-		</div>
-
-		<div class="col-sm-6">
-			<div class="drink-ingredients panel panel-default">
-				<div class="panel-heading">Ingredients</div>
-				<ul class="list-group" >
-					<li class="list-group-item" data-ng-repeat="ingredient in drink.ingredients"><span data-ng-if="ingredient.amount !== '0'"><span data-ng-bind="ingredient.amount"></span> </span><span data-ng-bind="ingredient.amountfraction"></span> <span data-ng-bind="ingredient.unit"></span> <span data-ng-bind="ingredient.name"></span></li>
-				</ul>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">Directions</div>
-				<div class="panel-body" data-ng-bind="drink.directions"></div>
-			</div>
-			<div class="row">
-				<div class="col-xs-6">
-					<div class="panel panel-default">
-						<div class="panel-heading">Credit</div>
-						<div class="panel-body" data-ng-bind="drink.credit"></div>
-					</div>
-				</div>
-				<div class="col-xs-6">
-					<div class="panel panel-default">
-						<div class="panel-heading">Rating</div>
-						<h1 class="drink-rating-h1"><div class="panel-body drink-rating" data-ng-bind="drink.rating"></div></h1>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<ul data-ng-repeat="ingredient in drink.ingredients">
+		<li class="ingredient-li"><span data-ng-bind="ingredient.amount"></span> <span data-ng-bind="ingredient.amountfraction"></span> <span data-ng-bind="ingredient.unit"></span> <span data-ng-bind="ingredient.name"></span></li>
+	</ul>
+	<p class="" data-ng-bind="drink.directions"></p>
+	<p class="" data-ng-bind="drink.credit"></p>
 </section>
