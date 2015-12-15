@@ -2909,28 +2909,28 @@ fieldset[disabled] a.btn {
 
 .btn-success {
   color: #fff;
-  background-color: #A0D468;
-  border-color: #94ce54; }
+  background-color: #5cb85c;
+  border-color: #4cae4c; }
   .btn-success:focus, .btn-success.focus {
     color: #fff;
-    background-color: #87c940;
-    border-color: #537f24; }
+    background-color: #449d44;
+    border-color: #255625; }
   .btn-success:hover {
     color: #fff;
-    background-color: #87c940;
-    border-color: #75b233; }
+    background-color: #449d44;
+    border-color: #398439; }
   .btn-success:active, .btn-success.active,
   .open > .btn-success.dropdown-toggle {
     color: #fff;
-    background-color: #87c940;
-    border-color: #75b233; }
+    background-color: #449d44;
+    border-color: #398439; }
     .btn-success:active:hover, .btn-success:active:focus, .btn-success:active.focus, .btn-success.active:hover, .btn-success.active:focus, .btn-success.active.focus,
     .open > .btn-success.dropdown-toggle:hover,
     .open > .btn-success.dropdown-toggle:focus,
     .open > .btn-success.dropdown-toggle.focus {
       color: #fff;
-      background-color: #75b233;
-      border-color: #537f24; }
+      background-color: #398439;
+      border-color: #255625; }
   .btn-success:active, .btn-success.active,
   .open > .btn-success.dropdown-toggle {
     background-image: none; }
@@ -2941,10 +2941,10 @@ fieldset[disabled] a.btn {
   fieldset[disabled] .btn-success.focus,
   fieldset[disabled] .btn-success:active,
   fieldset[disabled] .btn-success.active {
-    background-color: #A0D468;
-    border-color: #94ce54; }
+    background-color: #5cb85c;
+    border-color: #4cae4c; }
   .btn-success .badge {
-    color: #A0D468;
+    color: #5cb85c;
     background-color: #fff; }
 
 .btn-info {
@@ -4238,9 +4238,9 @@ a.label:hover, a.label:focus {
     background-color: #7652d1; }
 
 .label-success {
-  background-color: #A0D468; }
+  background-color: #5cb85c; }
   .label-success[href]:hover, .label-success[href]:focus {
-    background-color: #87c940; }
+    background-color: #449d44; }
 
 .label-info {
   background-color: #5bc0de; }
@@ -4466,7 +4466,7 @@ a.thumbnail.active {
   animation: progress-bar-stripes 2s linear infinite; }
 
 .progress-bar-success {
-  background-color: #A0D468; }
+  background-color: #5cb85c; }
   .progress-striped .progress-bar-success {
     background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
@@ -5823,8 +5823,8 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-.sample {
-  background: #A0D468; }
+.ng-valid.ng-dirty {
+  border-color: #8666d7 !important; }
 
 .ingredient-item > .col-sm-2, .ingredient-item > .col-sm-4 {
   margin: 5px 0px 5px; }
@@ -5844,6 +5844,6 @@ button.close {
   padding-top: 6px;
   padding-bottom: 6px; }
 
-.drink-rating-h1 {
+.drink-emoji {
   margin-top: 0px;
   margin-bottom: 0px; }

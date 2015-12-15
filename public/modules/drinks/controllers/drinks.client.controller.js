@@ -6,6 +6,8 @@ angular.module('drinks').controller('DrinksController', ['$scope', '$stateParams
 		$scope.authentication = Authentication;
 		$scope.ingredients = [];
 
+		$scope.rating = '😺';
+
 		// Add new Ingredient entries
 		$scope.addIngredient = function() {
 			var ingredient = {amount: '0', amountfraction: '', unit: 'oz', name: ''};

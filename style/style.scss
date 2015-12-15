@@ -1,9 +1,10 @@
 $brand-primary: #967ADC;
-$brand-success: #A0D468;
 
 @import "../public/lib/bootstrap-sass-official/assets/stylesheets/bootstrap";
 
-.sample { background: $brand-success; }
+.ng-valid.ng-dirty {
+    border-color: darken($btn-primary-bg, 5%) !important;
+}
 
 .ingredient-item > .col-sm-2, .ingredient-item > .col-sm-4 {
     margin: 5px 0px 5px;
@@ -35,7 +36,7 @@ $brand-success: #A0D468;
     padding-bottom: 6px;
 }
 
-.drink-rating-h1 {
+.drink-emoji {
     margin-top: 0px;
     margin-bottom: 0px;
 }
