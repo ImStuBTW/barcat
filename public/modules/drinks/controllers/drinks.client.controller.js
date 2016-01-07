@@ -39,7 +39,8 @@ angular.module('drinks').controller('DrinksController', ['$scope', '$stateParams
 				name: this.name,
 				ingredients: this.ingredients,
 				directions: this.directions,
-				credit: this.credit
+				credit: this.credit,
+				rating: this.rating
 			});
 
 			// Redirect after save

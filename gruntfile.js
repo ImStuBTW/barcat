@@ -99,6 +99,16 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		browserSync: {
+			dev: {
+				bsFiles: watchFiles,
+				options: {
+					watchTask: true,
+					proxy: 'localhost:3000',
+					port: 3001
+				}
+			}
+		},
 		nodemon: {
 			dev: {
 				script: 'server.js',
@@ -182,7 +192,7 @@ module.exports = function(grunt) {
 	});
 
 	// Default task(s).
-	grunt.registerTask('default', ['lint', 'sass:dev', 'copy:main', 'concurrent:default']);
+	grunt.registerTask('default', ['lint', 'sass:dev', 'browserSync', 'copy:main', 'concurrent:default']);
 
 	// Debug task.
 	grunt.registerTask('debug', ['lint', 'concurrent:debug']);

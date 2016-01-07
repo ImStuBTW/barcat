@@ -15,8 +15,7 @@
                 <div class="form-group">
                     <label class="control-label" for="ingredients">Ingredients</label>
                     <div class="ingredient-item" data-ng-repeat="ingredient in ingredients">
-                        <div class="col-sm-2">
-                            <div class="controls">
+                        <div class="col-sm-2 col-xs-4">
                                 <select class="form-control" data-ng-model="ingredient.amount">
                                   <option>0</option>
                                   <option>1</option>
@@ -40,10 +39,8 @@
                                   <option>19</option>
                                   <option>20</option>
                                 </select>
-                            </div>
                         </div>
-                        <div class="col-sm-2">
-                            <div class="controls">
+                        <div class="col-sm-2 col-xs-4">
                                 <select class="form-control" data-ng-model="ingredient.amountfraction">
                                   <option></option>
                                   <option>⅛</option>
@@ -53,10 +50,8 @@
                                   <option>⅔</option>
                                   <option>¾</option>
                                 </select>
-                            </div>
                         </div>
-                        <div class="col-sm-2">
-                            <div class="controls">
+                        <div class="col-sm-2 col-xs-4">
                                 <select class="form-control" data-ng-model="ingredient.unit">
                                   <option></option>
                                   <option>oz</option>
@@ -71,14 +66,11 @@
                                   <option>drop</option>
                                   <option>pinch</option>
                                 </select>
-                            </div>
                         </div>
-                        <div class="col-sm-4">
-                            <div class="controls">
+                        <div class="col-sm-4 col-xs-12">
                                 <input type="text" data-ng-model="ingredient.name" id="ingredient.name" class="form-control" placeholder="Ingredient">
-                            </div>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-2 col-xs-12">
                             <button class="remove-ingredient-button btn btn-default" type="button" data-ng-click="removeCreateIngredient(ingredients, $index)">Remove</button>
                         </div>
                     </div>
@@ -100,6 +92,21 @@
                         <input type="text" data-ng-model="credit" id="credit" class="form-control" placeholder="Credit">
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="image">Image</label>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="drink-image">
+                                <img src="images/cocktail.png" alt="Cocktail">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+
+                        </div>
+                    </div>
+                </div>
+
 
                 <div class="form-group">
                         <label class="control-label" for="rating">Rating</label>

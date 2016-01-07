@@ -30,7 +30,7 @@ var DrinkSchema = new Schema({
 		unit: {
 			type: String,
 			default: 'oz',
-			enum: ['oz', 'ml', 'dash', 'tsp', 'tbsp', 'cup', 'pint', 'cl', 'l', 'drop', 'pinch']
+			enum: ['', 'oz', 'ml', 'dash', 'tsp', 'tbsp', 'cup', 'pint', 'cl', 'l', 'drop', 'pinch']
 		},
 		name: {
 			type: String,

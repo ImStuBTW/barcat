@@ -15,7 +15,7 @@
                 <div class="form-group">
                     <label class="control-label" for="ingredients">Ingredients</label>
                     <div class="ingredient-item" data-ng-repeat="ingredient in drink.ingredients">
-                        <div class="col-sm-2">
+                        <div class="col-sm-2 col-xs-4">
                             <div class="controls">
                                 <select class="form-control" data-ng-model="ingredient.amount">
                                   <option>0</option>
@@ -42,7 +42,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-2 col-xs-4">
                             <div class="controls">
                                 <select class="form-control" data-ng-model="ingredient.amountfraction">
                                   <option></option>
@@ -55,7 +55,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-2 col-xs-4">
                             <div class="controls">
                                 <select class="form-control" data-ng-model="ingredient.unit">
                                   <option></option>
@@ -73,12 +73,12 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-4 col-xs-12">
                             <div class="controls">
                                 <input type="text" data-ng-model="ingredient.name" id="ingredient.name" class="form-control" placeholder="Ingredient">
                             </div>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-2 col-xs-12">
                             <button class="remove-ingredient-button btn btn-default" type="button" data-ng-click="removeIngredient(drink.ingredients, $index)">Remove</button>
                         </div>
                     </div>
@@ -102,16 +102,16 @@
                 </div>
 
                 <div class="form-group">
-                        <label class="control-label" for="rating">Rating</label>
-                        <div class="btn-group btn-group-justified">
-                            <a class="btn btn-primary" role="button" ng-model="drink.rating" btn-radio="'😺'"><h1 class="drink-emoji">😺</h1></a>
-                            <a class="btn btn-primary" role="button" ng-model="drink.rating" btn-radio="'😸'"><h1 class="drink-emoji">😸</h1></a>
-                            <a class="btn btn-primary" role="button" ng-model="drink.rating" btn-radio="'😹'"><h1 class="drink-emoji">😹</h1></a>
-                            <a class="btn btn-primary" role="button" ng-model="drink.rating" btn-radio="'😻'"><h1 class="drink-emoji">😻</h1></a>
-                            <a class="btn btn-primary" role="button" ng-model="drink.rating" btn-radio="'😼'"><h1 class="drink-emoji">😼</h1></a>
-                            <a class="btn btn-primary" role="button" ng-model="drink.rating" btn-radio="'🙀'"><h1 class="drink-emoji">🙀</h1></a>
-                            <a class="btn btn-primary" role="button" ng-model="drink.rating" btn-radio="'😿'"><h1 class="drink-emoji">😿</h1></a>
-                        </div>
+                    <label class="control-label" for="rating">Rating</label>
+                    <div class="btn-group btn-group-justified">
+                        <a class="btn btn-primary" role="button" ng-model="drink.rating" btn-radio="'😺'"><h1 class="drink-emoji">😺</h1></a>
+                        <a class="btn btn-primary" role="button" ng-model="drink.rating" btn-radio="'😸'"><h1 class="drink-emoji">😸</h1></a>
+                        <a class="btn btn-primary" role="button" ng-model="drink.rating" btn-radio="'😹'"><h1 class="drink-emoji">😹</h1></a>
+                        <a class="btn btn-primary" role="button" ng-model="drink.rating" btn-radio="'😻'"><h1 class="drink-emoji">😻</h1></a>
+                        <a class="btn btn-primary" role="button" ng-model="drink.rating" btn-radio="'😼'"><h1 class="drink-emoji">😼</h1></a>
+                        <a class="btn btn-primary" role="button" ng-model="drink.rating" btn-radio="'🙀'"><h1 class="drink-emoji">🙀</h1></a>
+                        <a class="btn btn-primary" role="button" ng-model="drink.rating" btn-radio="'😿'"><h1 class="drink-emoji">😿</h1></a>
+                    </div>
                 </div>
 
                 <div class="form-group">

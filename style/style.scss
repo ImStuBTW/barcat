@@ -10,6 +10,10 @@ $brand-primary: #967ADC;
     margin: 5px 0px 5px;
 }
 
+.ingredient-item > .col-xs-2, .ingredient-item > .col-xs-4 {
+    margin: 5px 0px 5px;
+}
+
 .remove-ingredient-button {
     width: 100%;
 }
@@ -27,7 +31,7 @@ $brand-primary: #967ADC;
 
 .drink-image {
     img {
-        width: 100%
+        width: 100%;
     }
 }
 
