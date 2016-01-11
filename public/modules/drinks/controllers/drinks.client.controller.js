@@ -1,12 +1,61 @@
 'use strict';
 
+// Please note that $modalInstance represents a modal window (instance) dependency.
+// It is not the same as the $modal service used below.
+angular.module('drinks').controller('ModalInstanceCtrl', function ($scope, $modalInstance, items) {
+
+  $scope.items = items;
+  $scope.selected = {
+    item: $scope.items[0]
+  };
+
+  $scope.ok = function () {
+    $modalInstance.close($scope.selected.item);
+  };
+
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+  };
+});
+
 // Drinks controller
-angular.module('drinks').controller('DrinksController', ['$scope', '$stateParams', '$location', 'Authentication', 'Drinks',
-	function($scope, $stateParams, $location, Authentication, Drinks) {
+angular.module('drinks').controller('DrinksController', ['$scope', '$stateParams', '$location', '$modal', 'Authentication', 'Drinks',
+	function($scope, $stateParams, $location, $modal, Authentication, Drinks) {
 		$scope.authentication = Authentication;
 		$scope.ingredients = [];
 
 		$scope.rating = '😺';
+
+		// Modal Stuff
+		$scope.glassList = ['Rocks', 'Collins', 'Highball', 'Snifter', 'Coupe', 'Cocktail', 'Nick&Nora', 'Port', 'Flute', 'Irish', 'Tropical', 'Julep', 'Mule'];
+		$scope.glass = 'Rocks';
+		$scope.colorList = ['red', 'green', 'blue'];
+		$scope.color = 'red';
+		$scope.iceList = ['None', 'Single', 'Cubes', 'Crushed'];
+		$scope.ice = 'None';
+		$scope.citrusList = ['None', 'Lemon Twist', 'Lemon Wedge', 'Lemon Peel', 'Lime Twist', 'Lime Wedge', 'Lime Twist', 'Orange Twist', 'Orange Peel', 'Orange Twist'];
+		$scope.citrus = 'None';
+		$scope.garnishList = ['None', 'Cherry', 'Strawberry', 'Apple', 'Olive', 'Celery', 'Pineapple', 'Cucumber'];
+		$scope.garnish = 'None';
+		$scope.extrasList = ['None', 'Umbrella', 'Salt', 'Straw', 'Whiped Cream', 'Mint'];
+		$scope.extras = 'None';
+
+		$scope.open = function (templateUrl, modalItems, chosenItems) {
+			var modalInstance = $modal.open({
+			  templateUrl: templateUrl,
+			  controller: 'ModalInstanceCtrl',
+			  resolve: {
+			    items: function () {
+			      return modalItems;
+			    }
+			  }
+			});
+
+			modalInstance.result.then(function (selectedItem) {
+			  $scope[chosenItems] = selectedItem;
+			});
+		};
+
 
 		// Add new Ingredient entries
 		$scope.addIngredient = function() {
