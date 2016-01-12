@@ -1,34 +1,15 @@
 <section data-ng-controller="DrinksController" data-ng-init="findOne()">
 
-    <script type="text/ng-template" id="drinkGlassModal.html">
+    <script type="text/ng-template" id="drinkModal.html">
         <div class="modal-header">
-            <h3 class="modal-title">Im a glass modal!</h3>
+            <h3 class="modal-title">Im a modal!</h3>
         </div>
         <div class="modal-body">
-            <ul>
-                <li ng-repeat="item in items">
-                    <a ng-click="selected.item = item">{{ item }}</a>
-                </li>
-            </ul>
-            Selected: <b>{{ selected.item }}</b>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" ng-click="ok()">OK</button>
-            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-        </div>
-    </script>
-
-    <script type="text/ng-template" id="drinkColorModal.html">
-        <div class="modal-header">
-            <h3 class="modal-title">Im a color modal!</h3>
-        </div>
-        <div class="modal-body">
-            <ul>
-                <li ng-repeat="item in items">
-                    <a ng-click="selected.item = item">{{ item }}</a>
-                </li>
-            </ul>
-            Selected: <b>{{ selected.item }}</b>
+            <div class="modal-row btn-group">
+                <div class="col-xs-6" data-ng-repeat="item in items">
+                    <a class="btn btn-primary btn-lg btn-block" data-ng-model="selected.item" data-btn-radio="item">{{ item }}</a>
+                </div>
+            </div>
         </div>
         <div class="modal-footer">
             <button class="btn btn-primary" ng-click="ok()">OK</button>
@@ -60,21 +41,21 @@
                         <div class="col-sm-8">
                             <div class="row">
                                 <div class="col-xs-6">
-                                    <a class="btn btn-primary btn-lg btn-block" data-ng-click="open('drinkGlassModal.html', glassList, 'glass')">Glass</a>
-                                    <a class="btn btn-primary btn-lg btn-block" data-ng-click="open('drinkGlassModal.html', iceList, 'ice')">Ice</a>
-                                    <a class="btn btn-primary btn-lg btn-block" data-ng-click="open('drinkGlassModal.html', cirtusList, 'cirtrus')">Citrus</a>
+                                    <a class="btn btn-primary btn-lg btn-block" data-ng-click="open('drinkModal.html', glassList, 'glass')">Glass</a>
+                                    <a class="btn btn-primary btn-lg btn-block" data-ng-click="open('drinkModal.html', iceList, 'ice')">Ice</a>
+                                    <a class="btn btn-primary btn-lg btn-block" data-ng-click="open('drinkModal.html', garnishList, 'garnish')">Garnishes</a>
                                 </div>
                                 <div class="col-xs-6">
-                                    <a class="btn btn-primary btn-lg btn-block" data-ng-click="open('drinkGlassModal.html', colorList, 'color')">Color</a>
-                                    <a class="btn btn-primary btn-lg btn-block" data-ng-click="open('drinkGlassModal.html', garnishList, 'garnish')">Garnishes</a>
-                                    <a class="btn btn-primary btn-lg btn-block" data-ng-click="open('drinkGlassModal.html', extrasList, 'extras')">Extras</a>
+                                    <a class="btn btn-primary btn-lg btn-block" data-ng-click="open('drinkModal.html', colorList, 'color')">Color</a>
+                                    <a class="btn btn-primary btn-lg btn-block" data-ng-click="open('drinkModal.html', citrusList, 'citrus')">Citrus</a>
+                                    <a class="btn btn-primary btn-lg btn-block" data-ng-click="open('drinkModal.html', extrasList, 'extras')">Extras</a>
                                 </div>
                             </div>
                             <div ng-show="glass">Selection from a modal: {{ glass }}</div>
                             <div ng-show="color">Selection from a modal: {{ color }}</div>
                             <div ng-show="glass">Selection from a modal: {{ ice }}</div>
-                            <div ng-show="color">Selection from a modal: {{ garnish }}</div>
-                            <div ng-show="glass">Selection from a modal: {{ citrus }}</div>
+                            <div ng-show="color">Selection from a modal: {{ citrus }}</div>
+                            <div ng-show="glass">Selection from a modal: {{ garnish }}</div>
                             <div ng-show="color">Selection from a modal: {{ extras }}</div>
                         </div>
                     </div>

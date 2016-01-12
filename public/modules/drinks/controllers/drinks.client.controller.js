@@ -2,11 +2,11 @@
 
 // Please note that $modalInstance represents a modal window (instance) dependency.
 // It is not the same as the $modal service used below.
-angular.module('drinks').controller('ModalInstanceCtrl', function ($scope, $modalInstance, items) {
+angular.module('drinks').controller('ModalInstanceCtrl', function ($scope, $modalInstance, items, current) {
 
   $scope.items = items;
   $scope.selected = {
-    item: $scope.items[0]
+    item: current
   };
 
   $scope.ok = function () {
@@ -33,7 +33,7 @@ angular.module('drinks').controller('DrinksController', ['$scope', '$stateParams
 		$scope.color = 'red';
 		$scope.iceList = ['None', 'Single', 'Cubes', 'Crushed'];
 		$scope.ice = 'None';
-		$scope.citrusList = ['None', 'Lemon Twist', 'Lemon Wedge', 'Lemon Peel', 'Lime Twist', 'Lime Wedge', 'Lime Twist', 'Orange Twist', 'Orange Peel', 'Orange Twist'];
+		$scope.citrusList = ['None', 'Lime Twist', 'Lime Wedge', 'Lime Peel', 'Lemon Twist', 'Lemon Wedge', 'Lemon Peel', 'Orange Twist', 'Orange Wedge', 'Orange Peel'];
 		$scope.citrus = 'None';
 		$scope.garnishList = ['None', 'Cherry', 'Strawberry', 'Apple', 'Olive', 'Celery', 'Pineapple', 'Cucumber'];
 		$scope.garnish = 'None';
@@ -47,7 +47,10 @@ angular.module('drinks').controller('DrinksController', ['$scope', '$stateParams
 			  resolve: {
 			    items: function () {
 			      return modalItems;
-			    }
+			  	},
+				current: function () {
+					return $scope[chosenItems];
+				}
 			  }
 			});
 
