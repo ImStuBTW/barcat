@@ -33,12 +33,14 @@
                 <div class="form-group">
                     <label class="control-label" for="icon">Icon</label>
                     <div class="row">
-                        <div class="col-sm-4">
-                            <div class="drink-image">
-                                <img src="images/cocktail.png" alt="Cocktail">
+                        <div class="col-xs-4">
+                            <div class="drink-image-container">
+                                <img class="drink-image-stacked" src="images/{{glass}}/liquid/{{color}}.png" alt="Cocktail Liquid">
+                                <img class="drink-image-stacked" src="images/{{glass}}/garnish/{{garnish}}.png" alt="Cocktail Garnish">
+                                <img class="drink-image-stacked" src="images/{{glass}}/Glass.png" alt="Cocktail Glass">
                             </div>
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-xs-8">
                             <div class="row">
                                 <div class="col-xs-6">
                                     <a class="btn btn-primary btn-lg btn-block" data-ng-click="open('drinkModal.html', glassList, 'glass')">Glass</a>
@@ -51,12 +53,12 @@
                                     <a class="btn btn-primary btn-lg btn-block" data-ng-click="open('drinkModal.html', extrasList, 'extras')">Extras</a>
                                 </div>
                             </div>
-                            <div ng-show="glass">Selection from a modal: {{ glass }}</div>
-                            <div ng-show="color">Selection from a modal: {{ color }}</div>
-                            <div ng-show="glass">Selection from a modal: {{ ice }}</div>
-                            <div ng-show="color">Selection from a modal: {{ citrus }}</div>
-                            <div ng-show="glass">Selection from a modal: {{ garnish }}</div>
-                            <div ng-show="color">Selection from a modal: {{ extras }}</div>
+                            <span ng-show="glass">Glass: {{ glass }}, </span>
+                            <span ng-show="color">Color: {{ color }}, </span>
+                            <span ng-show="ice">Ice: {{ ice }}, </span>
+                            <span ng-show="citrus">Citrus: {{ citrus }}, </span>
+                            <span ng-show="garnish">garnish: {{ garnish }}</span>
+                            <span ng-show="extras">extras: {{ extras }}</span>
                         </div>
                     </div>
                 </div>

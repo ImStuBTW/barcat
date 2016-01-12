@@ -29,7 +29,7 @@ angular.module('drinks').controller('DrinksController', ['$scope', '$stateParams
 		// Modal Stuff
 		$scope.glassList = ['Rocks', 'Collins', 'Highball', 'Snifter', 'Coupe', 'Cocktail', 'Nick&Nora', 'Port', 'Flute', 'Irish', 'Tropical', 'Julep', 'Mule'];
 		$scope.glass = 'Rocks';
-		$scope.colorList = ['red', 'green', 'blue'];
+		$scope.colorList = ['Pink', 'Purple'];
 		$scope.color = 'red';
 		$scope.iceList = ['None', 'Single', 'Cubes', 'Crushed'];
 		$scope.ice = 'None';

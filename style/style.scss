@@ -35,6 +35,16 @@ $brand-primary: #967ADC;
     }
 }
 
+.drink-image-container {
+    position: relative;
+    .drink-image-stacked {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+    }
+}
+
 .drink-rating {
     padding-top: 6px;
     padding-bottom: 6px;
