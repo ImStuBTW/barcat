@@ -27,6 +27,25 @@ angular.module('drinks').controller('DrinksController', ['$scope', '$stateParams
 		$scope.rating = '😺';
         $scope.icon = {glass: 'Rocks', color: 'Pink', ice: 'None', citrus: 'None', garnish: 'None', extras: 'None'};
 
+        // Dropdown Filter Stuff
+        $scope.dropdownStatus = {
+          sort: false,
+          rating: false,
+          liquor: false
+        };
+
+        $scope.dropdownSelection = {
+            sort: 'Title',
+            rating: 'Any',
+            liquor: 'Any'
+        }
+
+        $scope.toggleDropdown = function($event, dropdown) {
+          $event.preventDefault();
+          $event.stopPropagation();
+          $scope.dropdownStatus[dropdown] = !$scope.dropdownStatus[dropdown];
+        };
+
 		// Modal Icon Stuff
 		$scope.glassList = ['Rocks', 'Collins', 'Highball', 'Snifter', 'Coupe', 'Cocktail', 'Nick&Nora', 'Port', 'Flute', 'Irish', 'Tropical', 'Julep', 'Mule'];
 		$scope.colorList = ['Pink', 'Purple'];

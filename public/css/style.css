@@ -5865,5 +5865,9 @@ button.close {
   margin-top: 0px;
   margin-bottom: 0px; }
 
+.drink-filters {
+  margin-top: -10px;
+  margin-bottom: 25px; }
+
 .modal-row {
   width: 100%; }

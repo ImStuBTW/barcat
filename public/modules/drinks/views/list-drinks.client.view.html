@@ -2,8 +2,63 @@
     <div class="page-header">
         <h1>Drinks</h1>
     </div>
+
+    <div class="row drink-filters">
+        <div class="col-xs-3">
+            <h5>Sort</h5>
+            <div class="btn-group" dropdown is-open="dropdownStatus.sort">
+                <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled" ng-click="toggleDropdown($event, 'sort')">
+                {{dropdownSelection.sort}} <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a data-ng-click="dropdownSelection.sort = 'Title'">Title</a></li>
+                    <li><a data-ng-click="dropdownSelection.sort = 'Date Added'">Date Added</a></li>
+                    <li><a data-ng-click="dropdownSelection.sort = 'Random'">Random</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <h5>Rating</h5>
+            <div class="btn-group" dropdown is-open="dropdownStatus.rating">
+                <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled" ng-click="toggleDropdown($event, 'rating')">
+                {{dropdownSelection.rating}} <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a data-ng-click="dropdownSelection.rating = 'Any'">Any</a></li>
+                    <li><a data-ng-click="dropdownSelection.rating = '😺'"><h4>😺</h4></a></li>
+                    <li><a data-ng-click="dropdownSelection.rating = '😸'"><h4>😸</h4></a></li>
+                    <li><a data-ng-click="dropdownSelection.rating = '😹'"><h4>😹</h4></a></li>
+                    <li><a data-ng-click="dropdownSelection.rating = '😻'"><h4>😻</h4></a></li>
+                    <li><a data-ng-click="dropdownSelection.rating = '😼'"><h4>😼</h4></a></li>
+                    <li><a data-ng-click="dropdownSelection.rating = '😽'"><h4>😽</h4></a></li>
+                    <li><a data-ng-click="dropdownSelection.rating = '🙀'"><h4>🙀</h4></a></li>
+                    <li><a data-ng-click="dropdownSelection.rating = '😿'"><h4>😿</h4></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <h5>Liquor</h5>
+            <div class="btn-group" dropdown is-open="dropdownStatus.liquor">
+                <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled" ng-click="toggleDropdown($event, 'liquor')">
+                {{dropdownSelection.liquor}} <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a data-ng-click="dropdownSelection.liquor = 'Any'">Any</a></li>
+                    <li><a data-ng-click="dropdownSelection.liquor = 'Gin'">Gin</a></li>
+                    <li><a data-ng-click="dropdownSelection.liquor = 'Scotch'">Scotch</a></li>
+                    <li><a data-ng-click="dropdownSelection.liquor = 'Vodka'">Vodka</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <h5>Search</h5>
+            <input type="search" class="form-control" id="search" placeholder="">
+        </div>
+    </div>
+
+
     <div class="list-group">
-        <a data-ng-repeat="drink in drinks" data-ng-href="#!/drinks/{{drink._id}}" class="list-group-item">
+        <a data-ng-repeat="drink in drinks | orderBy:'+name'" data-ng-href="#!/drinks/{{drink._id}}" class="list-group-item">
 			<small class="list-group-item-text">
 				Posted on
 				<span data-ng-bind="drink.created | date:'medium'"></span>
