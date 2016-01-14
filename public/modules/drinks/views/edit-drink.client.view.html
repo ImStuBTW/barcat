@@ -35,30 +35,31 @@
                     <div class="row">
                         <div class="col-xs-4">
                             <div class="drink-image-container">
-                                <img class="drink-image-stacked" src="images/{{glass}}/liquid/{{color}}.png" alt="Cocktail Liquid">
-                                <img class="drink-image-stacked" src="images/{{glass}}/garnish/{{garnish}}.png" alt="Cocktail Garnish">
-                                <img class="drink-image-stacked" src="images/{{glass}}/Glass.png" alt="Cocktail Glass">
+                                <img class="drink-image-stacked" data-ng-src="images/{{drink.icon.glass}}/color/{{drink.icon.color}}.png" alt="Cocktail Color">
+                                <img class="drink-image-stacked" data-ng-src="images/{{drink.icon.glass}}/garnish/{{drink.icon.garnish}}.png" alt="Cocktail Garnish">
+                                <img class="drink-image-stacked" data-ng-src="images/{{drink.icon.glass}}/Glass.png" alt="Cocktail Glass">
                             </div>
                         </div>
                         <div class="col-xs-8">
                             <div class="row">
                                 <div class="col-xs-6">
-                                    <a class="btn btn-primary btn-lg btn-block" data-ng-click="open('drinkModal.html', glassList, 'glass')">Glass</a>
-                                    <a class="btn btn-primary btn-lg btn-block" data-ng-click="open('drinkModal.html', iceList, 'ice')">Ice</a>
-                                    <a class="btn btn-primary btn-lg btn-block" data-ng-click="open('drinkModal.html', garnishList, 'garnish')">Garnishes</a>
+                                    <a class="btn btn-primary btn-lg btn-block btn-drink-icon" data-ng-click="open('drinkModal.html', glassList, 'glass')">Glass</a>
+                                    <a class="btn btn-primary btn-lg btn-block btn-drink-icon" data-ng-click="open('drinkModal.html', iceList, 'ice')">Ice</a>
+                                    <a class="btn btn-primary btn-lg btn-block btn-drink-icon" data-ng-click="open('drinkModal.html', garnishList, 'garnish')">Garnishes</a>
                                 </div>
                                 <div class="col-xs-6">
-                                    <a class="btn btn-primary btn-lg btn-block" data-ng-click="open('drinkModal.html', colorList, 'color')">Color</a>
-                                    <a class="btn btn-primary btn-lg btn-block" data-ng-click="open('drinkModal.html', citrusList, 'citrus')">Citrus</a>
-                                    <a class="btn btn-primary btn-lg btn-block" data-ng-click="open('drinkModal.html', extrasList, 'extras')">Extras</a>
+                                    <a class="btn btn-primary btn-lg btn-block btn-drink-icon" data-ng-click="open('drinkModal.html', colorList, 'color')">Color</a>
+                                    <a class="btn btn-primary btn-lg btn-block btn-drink-icon" data-ng-click="open('drinkModal.html', citrusList, 'citrus')">Citrus</a>
+                                    <a class="btn btn-primary btn-lg btn-block btn-drink-icon" data-ng-click="open('drinkModal.html', extrasList, 'extras')">Extras</a>
                                 </div>
                             </div>
-                            <span ng-show="glass">Glass: {{ glass }}, </span>
-                            <span ng-show="color">Color: {{ color }}, </span>
-                            <span ng-show="ice">Ice: {{ ice }}, </span>
-                            <span ng-show="citrus">Citrus: {{ citrus }}, </span>
-                            <span ng-show="garnish">garnish: {{ garnish }}</span>
-                            <span ng-show="extras">extras: {{ extras }}</span>
+                            <span ng-show="drink.icon.glass">Glass: <b>{{ drink.icon.glass }}, </b></span>
+                            <span ng-show="drink.icon.color">Color: <b>{{ drink.icon.color }}, </b></span>
+                            <span ng-show="drink.icon.ice">Ice: <b>{{ drink.icon.ice }}, </b></span>
+                            <span ng-show="drink.icon.citrus">Citrus: <b>{{ drink.icon.citrus }}, </b></span>
+                            <span ng-show="drink.icon.garnish">garnish: <b>{{ drink.icon.garnish }}</b></span>
+                            <span ng-show="drink.icon.extras">extras: <b>{{ drink.icon.extras }}</b></span>
+                            <p>Icon: {{drink.icon}}</p>
                         </div>
                     </div>
                 </div>

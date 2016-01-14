@@ -13,8 +13,10 @@
 
 	<div class="row">
 		<div class="col-sm-6">
-			<div class="drink-image">
-				<img src="images/cocktail.png" alt="Cocktail">
+			<div class="drink-image-container">
+				<img class="drink-image-stacked" data-ng-src="images/{{drink.icon.glass}}/color/{{drink.icon.color}}.png" alt="Cocktail Color">
+				<img class="drink-image-stacked" data-ng-src="images/{{drink.icon.glass}}/garnish/{{drink.icon.garnish}}.png" alt="Cocktail Garnish">
+				<img class="drink-image-stacked" data-ng-src="images/{{drink.icon.glass}}/Glass.png" alt="Cocktail Glass">
 			</div>
 		</div>
 
@@ -43,6 +45,8 @@
 					</div>
 				</div>
 			</div>
+
+			<p>Icon: {{drink.icon}}</p>
 		</div>
 	</div>
 </section>

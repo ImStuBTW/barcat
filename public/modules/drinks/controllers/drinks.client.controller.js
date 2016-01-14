@@ -25,20 +25,15 @@ angular.module('drinks').controller('DrinksController', ['$scope', '$stateParams
 		$scope.ingredients = [];
 
 		$scope.rating = '😺';
+        $scope.icon = {glass: 'Rocks', color: 'Pink', ice: 'None', citrus: 'None', garnish: 'None', extras: 'None'};
 
-		// Modal Stuff
+		// Modal Icon Stuff
 		$scope.glassList = ['Rocks', 'Collins', 'Highball', 'Snifter', 'Coupe', 'Cocktail', 'Nick&Nora', 'Port', 'Flute', 'Irish', 'Tropical', 'Julep', 'Mule'];
-		$scope.glass = 'Rocks';
 		$scope.colorList = ['Pink', 'Purple'];
-		$scope.color = 'red';
 		$scope.iceList = ['None', 'Single', 'Cubes', 'Crushed'];
-		$scope.ice = 'None';
 		$scope.citrusList = ['None', 'Lime Twist', 'Lime Wedge', 'Lime Peel', 'Lemon Twist', 'Lemon Wedge', 'Lemon Peel', 'Orange Twist', 'Orange Wedge', 'Orange Peel'];
-		$scope.citrus = 'None';
 		$scope.garnishList = ['None', 'Cherry', 'Strawberry', 'Apple', 'Olive', 'Celery', 'Pineapple', 'Cucumber'];
-		$scope.garnish = 'None';
 		$scope.extrasList = ['None', 'Umbrella', 'Salt', 'Straw', 'Whiped Cream', 'Mint'];
-		$scope.extras = 'None';
 
 		$scope.open = function (templateUrl, modalItems, chosenItems) {
 			var modalInstance = $modal.open({
@@ -55,10 +50,28 @@ angular.module('drinks').controller('DrinksController', ['$scope', '$stateParams
 			});
 
 			modalInstance.result.then(function (selectedItem) {
-			  $scope[chosenItems] = selectedItem;
+			  $scope.drink.icon[chosenItems] = selectedItem;
 			});
 		};
 
+        $scope.openCreate = function (templateUrl, modalItems, chosenItems) {
+			var modalInstance = $modal.open({
+			  templateUrl: templateUrl,
+			  controller: 'ModalInstanceCtrl',
+			  resolve: {
+			    items: function () {
+			      return modalItems;
+			  	},
+				current: function () {
+					return $scope[chosenItems];
+				}
+			  }
+			});
+
+			modalInstance.result.then(function (selectedItem) {
+			  $scope.icon[chosenItems] = selectedItem;
+			});
+		};
 
 		// Add new Ingredient entries
 		$scope.addIngredient = function() {
@@ -89,6 +102,7 @@ angular.module('drinks').controller('DrinksController', ['$scope', '$stateParams
 			// Create new Drink object
 			var drink = new Drinks ({
 				name: this.name,
+                icon: this.icon,
 				ingredients: this.ingredients,
 				directions: this.directions,
 				credit: this.credit,
