@@ -52,13 +52,13 @@
         </div>
         <div class="col-xs-3">
             <h5>Search</h5>
-            <input type="search" class="form-control" id="search" placeholder="">
+            <input type="search" class="form-control" id="search" ng-model="search" placeholder="">
         </div>
     </div>
 
 
     <div class="list-group">
-        <a data-ng-repeat="drink in drinks | orderBy:'+name'" data-ng-href="#!/drinks/{{drink._id}}" class="list-group-item">
+        <a data-ng-repeat="drink in drinks | orderBy:drinkFilter.sort():drinkFilter.reverse | filter: {rating: drinkFilter.rating()} | filter: drinkFilter.liquor() | filter: search" data-ng-href="#!/drinks/{{drink._id}}" class="list-group-item">
 			<small class="list-group-item-text">
 				Posted on
 				<span data-ng-bind="drink.created | date:'medium'"></span>

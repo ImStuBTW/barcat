@@ -27,18 +27,51 @@ angular.module('drinks').controller('DrinksController', ['$scope', '$stateParams
 		$scope.rating = '😺';
         $scope.icon = {glass: 'Rocks', color: 'Pink', ice: 'None', citrus: 'None', garnish: 'None', extras: 'None'};
 
-        // Dropdown Filter Stuff
-        $scope.dropdownStatus = {
-          sort: false,
-          rating: false,
-          liquor: false
+        // Filter Stuff
+        $scope.drinkFilter = {
+            sort: function() {
+                if($scope.dropdownSelection.sort === 'Title') {
+                    return 'name';
+                }
+                else if($scope.dropdownSelection.sort === 'Date Added') {
+                    return 'created';
+                }
+                else if ($scope.dropdownSelection.sort === 'Random') {
+                    // Simple function that randomly sorts.
+                    // TODO: Results are seeded every time the user clicks the dropdown.
+                    return function() { return 0.5 - Math.random(); };
+                }
+            },
+            rating: function() {
+                if($scope.dropdownSelection.rating !== 'Any') {
+                    return $scope.dropdownSelection.rating;
+                }
+                else {
+                    return;
+                }
+            },
+            liquor: function() {
+                if($scope.dropdownSelection.liquor !== 'Any') {
+                    return $scope.dropdownSelection.liquor;
+                }
+                else {
+                    return;
+                }
+            },
+            reverse: false
         };
 
         $scope.dropdownSelection = {
             sort: 'Title',
             rating: 'Any',
             liquor: 'Any'
-        }
+        };
+
+        $scope.dropdownStatus = {
+          sort: false,
+          rating: false,
+          liquor: false
+        };
 
         $scope.toggleDropdown = function($event, dropdown) {
           $event.preventDefault();

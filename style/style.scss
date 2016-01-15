@@ -18,6 +18,23 @@ $brand-primary: #967ADC;
     width: 100%;
 }
 
+.navbar-inner {
+    min-height: 0px;
+}
+
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 75px;
+    height: 75px;
+    padding-top: 0;
+}
+
+.navbar-brand {
+    img {
+        padding-top: 5px;
+    }
+}
+
 .drink-name {
     display: inline-block;
     h1 {
