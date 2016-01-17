@@ -1,5 +1,6 @@
 $brand-primary: #967ADC;
 
+@import "./colors";
 @import "../public/lib/bootstrap-sass-official/assets/stylesheets/bootstrap";
 
 .ng-valid.ng-dirty {
@@ -33,6 +34,11 @@ $brand-primary: #967ADC;
     img {
         padding-top: 5px;
     }
+}
+
+.home {
+    padding-top: 50px;
+    padding-bottom: 20px;
 }
 
 .drink-name {

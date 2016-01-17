@@ -1,0 +1,156 @@
+// Colors Shamelessly lifted from https://github.com/simurai/duotone-syntax
+
+// Hues -----------------------------------
+$uno: 250;
+$duo: 30;
+
+// Uno hue
+$uno-1: hsl($uno, 100%, 96%);
+$uno-2: hsl($uno,  98%, 86%);
+$uno-3: hsl($uno,  96%, 78%);
+$uno-4: hsl($uno,  12%, 46%);
+
+// Duo hue
+$duo-1: hsl($duo, 100%, 80%);
+$duo-2: hsl($duo,  72%, 62%);
+$duo-3: hsl($duo,   6%, 46%);
+
+// Base colors -----------------------------------
+$fg: $uno-2;
+$bg: hsl($uno, 14%, 18%);
+$bg-alt: lighten($bg, 3%);
+$bg-light: lighten($bg, 12%);
+//$accent: hsl($duo, 100%, 66%);
+//$guide: lighten($bg, 10%);
+//$selection: lighten($bg, 12%);
+//$selection-gutter: lighten($bg, 3%);
+//$cursor-line: fade($selection, 26%); // needs to be semi-transparent to show serach results
+
+// Bootstrap overrides ---------------------------
+// Colors
+$gray-base:              #000 !default;
+$gray-darker:            lighten($gray-base, 13.5%); //lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:              lighten($gray-base, 20%);   //lighten($gray-base, 20%) !default;   // #333
+$gray:                   lighten($gray-base, 33.5%); //lighten($gray-base, 33.5%) !default; // #555
+$gray-light:             $bg-light; //lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:           $uno-2; //lighten($gray-base, 93.5%) !default; // #eee
+
+$brand-primary:           $duo-2; //darken(#428bca, 6.5%) !default; // #337ab7
+$brand-success:           #5cb85c !default;
+$brand-info:              #5bc0de !default;
+$brand-warning:           #f0ad4e !default;
+$brand-danger:            #d9534f !default;
+
+// Scaffolding
+$body-bg: $bg; //#fff !default;
+$text-color: $gray-lighter; //$gray-dark !default;
+$link-color: $duo-1; //$brand-primary !default;
+$link-hover-color: $duo-2; //darken($link-color, 15%) !default;
+$link-hover-decoration: none; //underline !default;
+
+// Component
+//** Global color for active items (e.g., navs or dropdowns).
+$component-active-color:    $fg; //#fff !default;
+$component-active-bg:       $brand-primary !default;
+
+// Dropdown
+$dropdown-bg:                    $bg; //#fff !default;
+$dropdown-border:                rgba(0,0,0,.15) !default;
+$dropdown-fallback-border:       $bg-light; //#ccc !default;
+$dropdown-divider-bg:            $bg-light; //#e5e5e5 !default;
+
+$dropdown-link-color:            $link-color; //$gray-dark !default;
+$dropdown-link-hover-color:      $link-hover-color; //darken($gray-dark, 5%) !default;
+$dropdown-link-hover-bg:         $uno-4; //#f5f5f5 !default;
+
+$dropdown-link-active-color:     $component-active-color !default;
+$dropdown-link-active-bg:        $component-active-bg !default;
+
+$dropdown-link-disabled-color:   $gray-light !default;
+
+$dropdown-header-color:          $gray-light !default;
+
+$dropdown-caret-color:           #000 !default;
+
+// Navbar
+$navbar-default-color:             $fg; //#777 !default;
+$navbar-default-bg:                $bg-light; //#f8f8f8 !default;
+$navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
+
+$navbar-default-link-color:                $link-color; //#777 !default;
+$navbar-default-link-hover-color:          $link-hover-color; //#333 !default;
+$navbar-default-link-hover-bg:             transparent !default;
+$navbar-default-link-active-color:         $duo-3; //#555 !default;
+$navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-link-disabled-color:       $uno-4; //#ccc !default;
+$navbar-default-link-disabled-bg:          transparent !default;
+
+$navbar-default-brand-color:               $navbar-default-link-color !default;
+$navbar-default-brand-hover-color:         darken($navbar-default-brand-color, 10%) !default;
+$navbar-default-brand-hover-bg:            transparent !default;
+
+$navbar-default-toggle-hover-bg:           #ddd !default;
+$navbar-default-toggle-icon-bar-bg:        #888 !default;
+$navbar-default-toggle-border-color:       #ddd !default;
+
+// Navbar Inverse
+$navbar-inverse-color:             #777 !default;
+$navbar-inverse-bg:                #f8f8f8 !default;
+$navbar-inverse-border:            darken($navbar-default-bg, 6.5%) !default;
+
+$navbar-inverse-link-color:                #777 !default;
+$navbar-inverse-link-hover-color:          #333 !default;
+$navbar-inverse-link-hover-bg:             transparent !default;
+$navbar-inverse-link-active-color:         #555 !default;
+$navbar-inverse-link-active-bg:            darken($navbar-default-bg, 6.5%) !default;
+$navbar-inverse-link-disabled-color:       #ccc !default;
+$navbar-inverse-link-disabled-bg:          transparent !default;
+
+$navbar-inverse-brand-color:               $navbar-default-link-color !default;
+$navbar-inverse-brand-hover-color:         darken($navbar-default-brand-color, 10%) !default;
+$navbar-inverse-brand-hover-bg:            transparent !default;
+
+$navbar-inverse-toggle-hover-bg:           #ddd !default;
+$navbar-inverse-toggle-icon-bar-bg:        #888 !default;
+$navbar-inverse-toggle-border-color:       #ddd !default;
+
+// jumbotron-bg
+
+$jumbotron-color:                inherit !default;
+$jumbotron-bg:                   $bg-light !default;
+$jumbotron-heading-color:        inherit !default;
+
+// List-Group
+$list-group-bg:                 $bg-alt; //#fff !default;
+$list-group-border:             $uno-4; //#ddd !default;
+
+$list-group-hover-bg:           $bg; //#f5f5f5 !default;
+$list-group-active-color:       $component-active-color !default;
+$list-group-active-bg:          $component-active-bg !default;
+$list-group-active-border:      $list-group-active-bg !default;
+$list-group-active-text-color:  lighten($list-group-active-bg, 40%) !default;
+
+$list-group-disabled-color:      $gray-light !default;
+$list-group-disabled-bg:         $gray-lighter !default;
+$list-group-disabled-text-color: $list-group-disabled-color !default;
+
+$list-group-link-color:         $duo-3; //#555 !default;
+$list-group-link-hover-color:   $duo-2; //$list-group-link-color !default;
+$list-group-link-heading-color: $duo-1; //#333 !default;
+
+// Panels
+$panel-bg:                    $bg-alt; //#fff !default;
+$panel-inner-border:          $uno-4; //#ddd !default;
+$panel-footer-bg:             $bg-light; //#f5f5f5 !default;
+
+$panel-default-text:          $fg; //$gray-dark !default;
+$panel-default-border:        $uno-4; //#ddd !default;
+$panel-default-heading-bg:    $bg-light; //#f5f5f5 !default;
+
+$panel-primary-text:          $fg; //#fff !default;
+$panel-primary-border:        $brand-primary !default;
+$panel-primary-heading-bg:    $brand-primary !default;
+
+// Wells
+$well-bg:                     $bg-light !default;
+$well-border:                 darken($well-bg, 7%) !default;

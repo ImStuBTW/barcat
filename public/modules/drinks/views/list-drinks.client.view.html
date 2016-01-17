@@ -7,20 +7,21 @@
         <div class="col-xs-3">
             <h5>Sort</h5>
             <div class="btn-group" dropdown is-open="dropdownStatus.sort">
-                <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled" ng-click="toggleDropdown($event, 'sort')">
+                <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled" data-ng-click="toggleDropdown($event, 'sort')">
                 {{dropdownSelection.sort}} <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
                     <li><a data-ng-click="dropdownSelection.sort = 'Title'">Title</a></li>
-                    <li><a data-ng-click="dropdownSelection.sort = 'Date Added'">Date Added</a></li>
+                    <li><a data-ng-click="dropdownSelection.sort = 'Date Added'; drinkFilter.reverse = true">Date Added</a></li>
                     <li><a data-ng-click="dropdownSelection.sort = 'Random'">Random</a></li>
                 </ul>
             </div>
+            <button type="button" class="btn btn-primary" data-ng-click="drinkFilter.reverse = !drinkFilter.reverse"><span class="glyphicon glyphicon-sort"></span></button>
         </div>
         <div class="col-xs-3">
             <h5>Rating</h5>
             <div class="btn-group" dropdown is-open="dropdownStatus.rating">
-                <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled" ng-click="toggleDropdown($event, 'rating')">
+                <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled" data-ng-click="toggleDropdown($event, 'rating')">
                 {{dropdownSelection.rating}} <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">

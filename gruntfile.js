@@ -90,12 +90,12 @@ module.exports = function(grunt) {
 		sass: {
 			dev: {
 				files: {
-					'public/css/style.css': 'style/{,*/}*.{scss,sass}',
+					'public/css/style.css': 'style/style.scss',
 				}
 			},
 			dist: {
 				files: {
-					'public/dist/style.min.css': 'style/{,*/}*.{scss,sass}'
+					'public/dist/style.min.css': 'style/style.scss'
 				}
 			}
 		},
