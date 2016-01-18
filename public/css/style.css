@@ -5823,6 +5823,22 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+html {
+  position: relative;
+  min-height: 100%; }
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 30px; }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  color: #eeeeee; }
+
 .ng-valid.ng-dirty {
   border-color: #8e78fb !important; }
 
